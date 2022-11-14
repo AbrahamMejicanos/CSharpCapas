@@ -176,12 +176,45 @@ namespace AccesoDatos.DataBase
 
         }
 
-        private void PrepararConexionBaseDatos(ref ClsDataBase objDataBase) { 
-        
+        private void PrepararConexionBaseDatos(ref ClsDataBase objDataBase) {
+            
+            CrearConexionBaseDatos(ref objDataBase);
+            ValidarConexionBaseDatos(ref objDataBase);
+
         }
 
-        private void EjecutarDataAdapter(ref ClsDataBase objDataBase) { 
-        
+        private void EjecutarDataAdapter(ref ClsDataBase objDataBase) {
+
+            try {
+                PrepararConexionBaseDatos(ref objDataBase);
+
+                objDataBase.ObjSqlDataAdapter = new SqlDataAdapter(objDataBase.NombreSP, objDataBase.ObjSqlConnection);
+
+                objDataBase.ObjSqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                AgregarParametros(ref objDataBase);
+
+                objDataBase.DsResultados = new DataSet();
+
+                objDataBase.ObjSqlDataAdapter.Fill(objDataBase.DsResultados, objDataBase.NombreTabla);
+            }
+            catch (Exception ex) {
+                objDataBase.MensajeErrorDB = ex.Message.ToString();
+            }
+            finally {
+                if (objDataBase.ObjSqlConnection.State == connectionState.Closed) {
+
+                    objDataBase.ObjSqlConnection.Open();
+
+                }
+                else {
+
+                    objDataBase.ObjSqlConnection.Close();
+                    objDataBase.ObjSqlConnection.Dispose();
+
+                }
+            }
+
         }
 
         private void EjecutarCommand(ref ClsDataBase objDataBase) { 
