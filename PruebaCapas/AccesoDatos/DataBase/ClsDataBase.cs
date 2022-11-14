@@ -217,13 +217,60 @@ namespace AccesoDatos.DataBase
 
         }
 
-        private void EjecutarCommand(ref ClsDataBase objDataBase) { 
-        
+        private void EjecutarCommand(ref ClsDataBase objDataBase)
+        {
+            try {
+
+                PrepararConexionBaseDatos(ref objDataBase);
+                objDataBase.ObjSqlCommand = new SqlCommand(objDataBase.NombreSP, objDataBase.ObjSqlConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                AgregarParametros(ref objDataBase);
+
+                if (objDataBase.Scalar){
+
+                    objDataBase.ValorScalar = objDataBase.ObjSqlCommand.ExecuteScalar().ToString().Trim();
+
+                }
+                else {
+
+                    objDataBase.ObjSqlCommand.ExecuteNonQuery();
+
+                }
+
+            } catch (Exception ex) {
+
+                objDataBase.MensajeErrorDB = ex.Message.ToString();
+            
+            } finally {
+
+                if (objDataBase.ObjSqlConnection.State == ConnectionState.Open) {
+
+                    ValidarConexionBaseDatos(ref objDataBase);
+                
+                }
+
+            }
+
         }
 
         #endregion
 
         #region Metodos publicos
+
+        public void CRUD(ref ClsDataBase objDataBase) {
+
+            if (objDataBase.Scalar) {
+
+                EjecutarCommand(ref objDataBase);
+
+            }
+            else {
+                EjecutarDataAdapter(ref objDataBase);
+            }
+        
+        }
 
         #endregion
 
