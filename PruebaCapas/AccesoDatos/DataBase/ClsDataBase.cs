@@ -264,7 +264,7 @@ namespace AccesoDatos.DataBase
             if (objDataBase.Scalar) {
 
                 EjecutarCommand(ref objDataBase);
-
+                
             }
             else {
                 EjecutarDataAdapter(ref objDataBase);
