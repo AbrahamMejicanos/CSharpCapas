@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace AccesoDatos.DataBase
@@ -53,19 +54,126 @@ namespace AccesoDatos.DataBase
                 case "DB_BasePruebas":
 
                     objDataBase.ObjSqlConnection = new SqlConnection(Properties.Settings.Default.cadenaConexion_DB_BasePruebas);
-
+                    
                     break;
                 default:
                     break;
             }
         }
 
-        private void ValidarConexionBaseDatos(ref ClsDataBase objDataBase) { 
-        
+        private void ValidarConexionBaseDatos(ref ClsDataBase objDataBase) {
+
+            if (objDataBase.ObjSqlConnection.State == ConnectionState.Closed){
+                
+                objDataBase.ObjSqlConnection.Open();
+
+            }
+            else{
+
+                objDataBase.ObjSqlConnection.Close();
+                objDataBase.ObjSqlConnection.Dispose();
+
+            }
+
         }
 
-        private void AgregarParametros(ref ClsDataBase objDataBase) { 
-        
+        private void AgregarParametros(ref ClsDataBase objDataBase) {
+
+            if (objDataBase.DtParametros != null) {
+
+                SqlDbType tipoDatoSQL = new SqlDbType();
+
+                foreach (DataRow i in objDataBase.DtParametros.Rows) {
+
+                    switch (i[1]) {
+
+                        case "1":
+                            tipoDatoSQL = SqlDbType.Bit;
+                            break;
+                        case "2":
+                            tipoDatoSQL = SqlDbType.TinyInt;
+                            break;
+                        case "3":
+                            tipoDatoSQL = SqlDbType.SmallInt;
+                            break;
+                        case "4":
+                            tipoDatoSQL = SqlDbType.Int;
+                            break;
+                        case "5":
+                            tipoDatoSQL = SqlDbType.BigInt;
+                            break;
+                        case "6":
+                            tipoDatoSQL = SqlDbType.Decimal;
+                            break;
+                        case "7":
+                            tipoDatoSQL = SqlDbType.SmallMoney;
+                            break;
+                        case "8":
+                            tipoDatoSQL = SqlDbType.Money;
+                            break;
+                        case "9":
+                            tipoDatoSQL = SqlDbType.Float;
+                            break;
+                        case "10":
+                            tipoDatoSQL = SqlDbType.Real;
+                            break;
+                        case "11":
+                            tipoDatoSQL = SqlDbType.Date;
+                            break;
+                        case "12":
+                            tipoDatoSQL = SqlDbType.Time;
+                            break;
+                        case "13":
+                            tipoDatoSQL = SqlDbType.SmallDateTime;
+                            break;
+                        case "14":
+                            tipoDatoSQL = SqlDbType.Date;
+                            break;
+                        case "15":
+                            tipoDatoSQL = SqlDbType.Char;
+                            break;
+                        case "16":
+                            tipoDatoSQL = SqlDbType.NChar;
+                            break;
+                        case "17":
+                            tipoDatoSQL = SqlDbType.VarChar;
+                            break;
+                        case "18":
+                            tipoDatoSQL = SqlDbType.NVarChar;
+                            break;
+                        default:
+                            break;
+                    
+                    }
+
+                    if (objDataBase.Scalar) {
+
+                        if (i[2].ToString().Equals(string.Empty)) {
+
+                            objDataBase.ObjSqlCommand.Parameters.Add(i[0].ToString(), tipoDatoSQL).Value = DBNull.Value;
+
+                        }else {
+                            objDataBase.ObjSqlCommand.Parameters.Add(i[0].ToString(), tipoDatoSQL).Value = i[2].ToString();
+                        }
+
+                    }else {
+
+                        if (i[2].ToString().Equals(string.Empty)) {
+
+                            objDataBase.ObjSqlDataAdapter.SelectCommand.Parameters.Add(i[0].ToString(), tipoDatoSQL).Value = DBNull.Value;
+
+                        }else {
+
+                            objDataBase.ObjSqlDataAdapter.SelectCommand.Parameters.Add(i[0].ToString(), tipoDatoSQL).Value = i[2].ToString();
+
+                        }
+
+                    }
+
+                }
+
+            }
+
         }
 
         private void PrepararConexionBaseDatos(ref ClsDataBase objDataBase) { 
