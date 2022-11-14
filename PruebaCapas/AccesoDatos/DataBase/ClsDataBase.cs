@@ -202,7 +202,7 @@ namespace AccesoDatos.DataBase
                 objDataBase.MensajeErrorDB = ex.Message.ToString();
             }
             finally {
-                if (objDataBase.ObjSqlConnection.State == connectionState.Closed) {
+                if (objDataBase.ObjSqlConnection.State == ConnectionState.Closed) {
 
                     objDataBase.ObjSqlConnection.Open();
 
