@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tbN = new System.Windows.Forms.TextBox();
             this.tbPA = new System.Windows.Forms.TextBox();
             this.tbSA = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tbNi = new System.Windows.Forms.TextBox();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.lblIUTUX = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -56,6 +56,13 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(776, 177);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.Text = "Selecciona";
+            this.Editar.ToolTipText = "Selecciona";
             // 
             // tbN
             // 
@@ -83,9 +90,10 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(91, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Nombre Completo";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -150,13 +158,6 @@
             this.tbNi.Name = "tbNi";
             this.tbNi.Size = new System.Drawing.Size(100, 20);
             this.tbNi.TabIndex = 12;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.Text = "Selecciona";
-            this.Editar.ToolTipText = "Selecciona";
             // 
             // label5
             // 
