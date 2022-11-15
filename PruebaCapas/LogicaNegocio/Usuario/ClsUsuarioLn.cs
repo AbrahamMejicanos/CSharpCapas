@@ -13,9 +13,11 @@ namespace LogicaNegocio.Usuario
         #endregion
 
         #region Metodo Index
-        public void Index(ref ClsUsuario objUsuario) {
+        public void Index(ref ClsUsuario objUsuario)
+        {
 
-            objDataBase = new ClsDataBase() {
+            objDataBase = new ClsDataBase()
+            {
 
                 NombreTabla = "Usuarios",
                 NombreSP = "[SCH_GENERAL].[SP._Usuario_Index]",
@@ -86,7 +88,7 @@ namespace LogicaNegocio.Usuario
             objDataBase.DtParametros.Rows.Add(@"@SATUX", "17", objUsuario.SATUX);
             objDataBase.DtParametros.Rows.Add(@"@FNTUX", "13", objUsuario.FNTUX);
             objDataBase.DtParametros.Rows.Add(@"@ETUXX", "1", objUsuario.ETUXX);
-            
+
             Ejecutar(ref objUsuario);
 
         }
@@ -109,24 +111,30 @@ namespace LogicaNegocio.Usuario
         #endregion
 
         #region Metodos privados
-        private void Ejecutar(ref ClsUsuario objUsuario) {
+        private void Ejecutar(ref ClsUsuario objUsuario)
+        {
 
             objDataBase.CRUD(ref objDataBase);
 
-            if (objDataBase.MensajeErrorDB == null) {
+            if (objDataBase.MensajeErrorDB == null)
+            {
 
-                if (objDataBase.Scalar == true) {
+                if (objDataBase.Scalar == true)
+                {
 
-                    objUsuario.ValorScalar = objDataBase.ValorScalar; 
+                    objUsuario.ValorScalar = objDataBase.ValorScalar;
 
                 }
-                else {
+                else
+                {
 
                     objUsuario.DtResultado = objDataBase.DsResultados.Tables[0];
 
-                    if (objUsuario.DtResultado.Rows.Count == 1) {
+                    if (objUsuario.DtResultado.Rows.Count == 1)
+                    {
 
-                        foreach (DataRow i in objUsuario.DtResultado.Rows) {
+                        foreach (DataRow i in objUsuario.DtResultado.Rows)
+                        {
 
                             objUsuario.IDTUX = Convert.ToByte(i["IDTUX"].ToString());
                             objUsuario.NUTUX = i["NUTUX"].ToString();
@@ -142,12 +150,13 @@ namespace LogicaNegocio.Usuario
                 }
 
             }
-            else {
+            else
+            {
 
                 objUsuario.MensajeError = objDataBase.MensajeErrorDB;
 
             }
-        
+
         }
         #endregion
     }
