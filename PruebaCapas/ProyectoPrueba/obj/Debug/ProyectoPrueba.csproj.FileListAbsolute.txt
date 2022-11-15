@@ -11,6 +11,10 @@ C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\ProyectoPrueba\bin\Debug\AccesoD
 C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\ProyectoPrueba\bin\Debug\AccesoDatos.dll.config
 C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\ProyectoPrueba\obj\Debug\ProyectoPrueba.csproj.AssemblyReference.cache
 C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\ProyectoPrueba\obj\Debug\ProyectoPrueba.csproj.SuggestedBindingRedirects.cache
+<<<<<<< HEAD
+=======
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\ProyectoPrueba\obj\Debug\ProyectoPrueba.Principal.FrmUsuario.resources
+>>>>>>> CapaPresentacion
 C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\ProyectoPrueba\obj\Debug\ProyectoPrueba.Properties.Resources.resources
 C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\ProyectoPrueba\obj\Debug\ProyectoPrueba.csproj.GenerateResource.cache
 C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\ProyectoPrueba\obj\Debug\ProyectoPrueba.csproj.CoreCompileInputs.cache

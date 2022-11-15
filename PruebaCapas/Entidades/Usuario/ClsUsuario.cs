@@ -11,6 +11,7 @@ namespace Entidades.Usuario
         private string _NUTUX, _PATUX, _SATUX;
         private DateTime _FNTUX;
         private bool _ETUXX;
+        private string _NTUXX;
 
         //atributos de manejo de la base de datos
         private string _mensajeError, _valorScalar;
@@ -28,6 +29,7 @@ namespace Entidades.Usuario
         public string MensajeError { get => _mensajeError; set => _mensajeError = value; }
         public string ValorScalar { get => _valorScalar; set => _valorScalar = value; }
         public DataTable DtResultado { get => _dtResultado; set => _dtResultado = value; }
+        public string NTUXX { get => _NTUXX; set => _NTUXX = value; }
         #endregion
     }
 }
