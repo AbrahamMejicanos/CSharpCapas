@@ -1,2 +1,17 @@
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\bin\Debug\LogicaNegocio.dll.config
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\bin\Debug\AccesoDatos.dll
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\bin\Debug\Entidades.dll
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\bin\Debug\EntityFramework.dll
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\bin\Debug\AccesoDatos.pdb
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\bin\Debug\AccesoDatos.dll.config
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\bin\Debug\Entidades.pdb
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\bin\Debug\EntityFramework.xml
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.AssemblyReference.cache
 C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\obj\Debug\LogicaNegocio.pdb

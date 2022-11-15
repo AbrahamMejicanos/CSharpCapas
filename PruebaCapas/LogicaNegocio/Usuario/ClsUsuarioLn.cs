@@ -20,7 +20,7 @@ namespace LogicaNegocio.Usuario
             {
 
                 NombreTabla = "Usuarios",
-                NombreSP = "[SCH_GENERAL].[SP._Usuario_Index]",
+                NombreSP = "[SCH_GENERAL].[SP_Usuario_Index]",
                 Scalar = false,
 
             };
@@ -39,7 +39,7 @@ namespace LogicaNegocio.Usuario
             {
 
                 NombreTabla = "Usuarios",
-                NombreSP = "[SCH_GENERAL].[SP._Usuario_Index]",
+                NombreSP = "[SCH_GENERAL].[SP_Usuario_Create]",
                 Scalar = true,
 
             };
@@ -47,8 +47,7 @@ namespace LogicaNegocio.Usuario
             objDataBase.DtParametros.Rows.Add(@"@NUTUX", "17", objUsuario.NUTUX);
             objDataBase.DtParametros.Rows.Add(@"@PATUX", "17", objUsuario.PATUX);
             objDataBase.DtParametros.Rows.Add(@"@SATUX", "17", objUsuario.SATUX);
-            objDataBase.DtParametros.Rows.Add(@"@FNTUX", "13", objUsuario.FNTUX);
-            objDataBase.DtParametros.Rows.Add(@"@ETUXX", "1", objUsuario.ETUXX);
+            objDataBase.DtParametros.Rows.Add(@"@NTUXX", "17", objUsuario.NTUXX);
 
             Ejecutar(ref objUsuario);
 
@@ -61,7 +60,7 @@ namespace LogicaNegocio.Usuario
             {
 
                 NombreTabla = "Usuarios",
-                NombreSP = "[SCH_GENERAL].[SP._Usuario_Index]",
+                NombreSP = "[SCH_GENERAL].[SP_Usuario_Read]",
                 Scalar = false,
 
             };
@@ -77,7 +76,7 @@ namespace LogicaNegocio.Usuario
             {
 
                 NombreTabla = "Usuarios",
-                NombreSP = "[SCH_GENERAL].[SP._Usuario_Index]",
+                NombreSP = "[SCH_GENERAL].[SP_Usuario_Update]",
                 Scalar = true,
 
             };
@@ -86,8 +85,7 @@ namespace LogicaNegocio.Usuario
             objDataBase.DtParametros.Rows.Add(@"@NUTUX", "17", objUsuario.NUTUX);
             objDataBase.DtParametros.Rows.Add(@"@PATUX", "17", objUsuario.PATUX);
             objDataBase.DtParametros.Rows.Add(@"@SATUX", "17", objUsuario.SATUX);
-            objDataBase.DtParametros.Rows.Add(@"@FNTUX", "13", objUsuario.FNTUX);
-            objDataBase.DtParametros.Rows.Add(@"@ETUXX", "1", objUsuario.ETUXX);
+            objDataBase.DtParametros.Rows.Add(@"@NTUXX", "17", objUsuario.NTUXX);
 
             Ejecutar(ref objUsuario);
 
@@ -100,7 +98,7 @@ namespace LogicaNegocio.Usuario
             {
 
                 NombreTabla = "Usuarios",
-                NombreSP = "[SCH_GENERAL].[SP._Usuario_Index]",
+                NombreSP = "[SCH_GENERAL].[SP_Usuario_Delete]",
                 Scalar = true,
 
             };
@@ -140,8 +138,7 @@ namespace LogicaNegocio.Usuario
                             objUsuario.NUTUX = i["NUTUX"].ToString();
                             objUsuario.PATUX = i["PATUX"].ToString();
                             objUsuario.SATUX = i["SATUX"].ToString();
-                            objUsuario.FNTUX = Convert.ToDateTime(i["FNTUX"].ToString());
-                            objUsuario.ETUXX = Convert.ToBoolean(i["ETUX"].ToString());
+                            objUsuario.NTUXX = i["NTUXX"].ToString();
 
                         }
 

@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Principal\FrmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Principal\FrmLogin.Designer.cs">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Principal\FrmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

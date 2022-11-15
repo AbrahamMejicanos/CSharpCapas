@@ -28,28 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.tbN = new System.Windows.Forms.TextBox();
             this.tbPA = new System.Windows.Forms.TextBox();
             this.tbSA = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.DtpFN = new System.Windows.Forms.DateTimePicker();
-            this.chkE = new System.Windows.Forms.CheckBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbNi = new System.Windows.Forms.TextBox();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvUsuarios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 185);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 177);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar});
+            this.dgvUsuarios.Location = new System.Drawing.Point(12, 185);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.Size = new System.Drawing.Size(776, 177);
+            this.dgvUsuarios.TabIndex = 0;
+            this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
             // tbN
             // 
@@ -99,23 +103,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Segundo Apellido";
             // 
-            // DtpFN
-            // 
-            this.DtpFN.Location = new System.Drawing.Point(80, 81);
-            this.DtpFN.Name = "DtpFN";
-            this.DtpFN.Size = new System.Drawing.Size(285, 20);
-            this.DtpFN.TabIndex = 7;
-            // 
-            // chkE
-            // 
-            this.chkE.AutoSize = true;
-            this.chkE.Location = new System.Drawing.Point(15, 84);
-            this.chkE.Name = "chkE";
-            this.chkE.Size = new System.Drawing.Size(59, 17);
-            this.chkE.TabIndex = 8;
-            this.chkE.Text = "Estado";
-            this.chkE.UseVisualStyleBackColor = true;
-            // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(509, 156);
@@ -124,6 +111,7 @@
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
             // 
@@ -133,6 +121,7 @@
             this.btnActualizar.TabIndex = 10;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
@@ -143,26 +132,49 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(394, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "NIT";
+            // 
+            // tbNi
+            // 
+            this.tbNi.Location = new System.Drawing.Point(397, 35);
+            this.tbNi.Name = "tbNi";
+            this.tbNi.Size = new System.Drawing.Size(100, 20);
+            this.tbNi.TabIndex = 12;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.Text = "Selecciona";
+            this.Editar.ToolTipText = "Selecciona";
+            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 379);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tbNi);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.chkE);
-            this.Controls.Add(this.DtpFN);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbSA);
             this.Controls.Add(this.tbPA);
             this.Controls.Add(this.tbN);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvUsuarios);
             this.Name = "FrmUsuario";
             this.Text = "FrmUsuario";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,17 +182,18 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.TextBox tbN;
         private System.Windows.Forms.TextBox tbPA;
         private System.Windows.Forms.TextBox tbSA;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker DtpFN;
-        private System.Windows.Forms.CheckBox chkE;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbNi;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
     }
 }
