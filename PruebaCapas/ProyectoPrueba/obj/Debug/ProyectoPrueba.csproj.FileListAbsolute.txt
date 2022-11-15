@@ -1,0 +1,5 @@
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\ProyectoPrueba\obj\Debug\ProyectoPrueba.csproj.AssemblyReference.cache
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\ProyectoPrueba\obj\Debug\ProyectoPrueba.csproj.SuggestedBindingRedirects.cache
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\ProyectoPrueba\obj\Debug\ProyectoPrueba.Properties.Resources.resources
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\ProyectoPrueba\obj\Debug\ProyectoPrueba.csproj.GenerateResource.cache
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\ProyectoPrueba\obj\Debug\ProyectoPrueba.csproj.CoreCompileInputs.cache

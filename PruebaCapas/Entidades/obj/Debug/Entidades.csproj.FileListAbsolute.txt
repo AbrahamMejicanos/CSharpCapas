@@ -1,0 +1,6 @@
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\Entidades\bin\Debug\Entidades.dll
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\Entidades\bin\Debug\Entidades.pdb
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\Entidades\obj\Debug\Entidades.dll
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\Entidades\obj\Debug\Entidades.pdb

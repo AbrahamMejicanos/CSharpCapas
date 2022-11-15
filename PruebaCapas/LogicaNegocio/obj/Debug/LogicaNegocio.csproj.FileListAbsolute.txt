@@ -1,0 +1,2 @@
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\50253\Desktop\pruebaCSharp\PruebaCapas\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
