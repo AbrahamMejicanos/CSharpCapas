@@ -41,6 +41,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbNi = new System.Windows.Forms.TextBox();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblIUTUX = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,6 +133,7 @@
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label4
             // 
@@ -155,11 +158,31 @@
             this.Editar.Text = "Selecciona";
             this.Editar.ToolTipText = "Selecciona";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 123);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(24, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "ID: ";
+            // 
+            // lblIUTUX
+            // 
+            this.lblIUTUX.AutoSize = true;
+            this.lblIUTUX.Location = new System.Drawing.Point(42, 123);
+            this.lblIUTUX.Name = "lblIUTUX";
+            this.lblIUTUX.Size = new System.Drawing.Size(25, 13);
+            this.lblIUTUX.TabIndex = 15;
+            this.lblIUTUX.Text = "NIT";
+            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 379);
+            this.Controls.Add(this.lblIUTUX);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbNi);
             this.Controls.Add(this.btnEliminar);
@@ -195,5 +218,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbNi;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblIUTUX;
     }
 }

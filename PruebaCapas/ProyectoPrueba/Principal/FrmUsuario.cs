@@ -62,7 +62,30 @@ namespace ProyectoPrueba.Principal
         private void btnActualizar_Click(object sender, System.EventArgs e)
         {
 
+            objUsuario = new ClsUsuario()
+            {
+                IDTUX = Convert.ToByte(lblIUTUX.Text),
+                NUTUX = tbN.Text,
+                PATUX = tbPA.Text,
+                SATUX = tbSA.Text,
+                NTUXX = tbNi.Text
 
+            };
+
+            objUsuarioLn.Update(ref objUsuario);
+            if (objUsuario.MensajeError == null)
+            {
+
+                MessageBox.Show("El usuario fue actualizado correctamente");
+                CargarListaUsuarios();
+
+            }
+            else
+            {
+
+                MessageBox.Show(objUsuario.MensajeError, "Mensaje de Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
@@ -79,6 +102,7 @@ namespace ProyectoPrueba.Principal
 
                     };
 
+                    lblIUTUX.Text = objUsuario.IDTUX.ToString();
                     objUsuarioLn.Read(ref objUsuario);
                     tbN.Text = objUsuario.NUTUX;
                     tbPA.Text = objUsuario.PATUX;
@@ -93,6 +117,18 @@ namespace ProyectoPrueba.Principal
 
              }
 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            objUsuario = new ClsUsuario() {
+
+                IDTUX = Convert.ToByte(lblIUTUX.Text)
+
+            };
+
+            objUsuarioLn.Delete(ref objUsuario);
+            CargarListaUsuarios();
         }
     }
 }
